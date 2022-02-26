@@ -8,7 +8,7 @@ const defaultSEOConfig = {
   openGraph: {
     url: "https://research.reylabs.xyz",
     title: "ReSearch Engine",
-    description: "An eduction serach engine",
+    description: "An eduction search engine",
     images: [
       {
         url: "https://cdn.statically.io/og/theme=dark/ReSearch%20Engine.jpg",
