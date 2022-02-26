@@ -29,7 +29,6 @@ function SearchForm() {
       <Button w="6vw" p="4">
         Search
       </Button>
-       <button><img src="/Googlebutton.svg"></img></button>
     </Stack>
   );
 }

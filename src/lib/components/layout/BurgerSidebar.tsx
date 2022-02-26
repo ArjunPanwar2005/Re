@@ -36,10 +36,7 @@ export default function BurgerSidebar() {
                 Bookmarks
               </Button>
               <Button py="12" variant="ghost" borderRadius="0" w="full">
-                Login
-              </Button>
-              <Button py="12" variant="ghost" borderRadius="0" w="full">
-                Register
+                Connect to google
               </Button>
             </Stack>
           </DrawerBody>
