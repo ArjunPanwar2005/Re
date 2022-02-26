@@ -1,25 +1,24 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Stack, Text } from "@chakra-ui/react";
 
-import CTASection from "lib/components/samples/CTASection";
-import SomeImage from "lib/components/samples/SomeImage";
-import SomeText from "lib/components/samples/SomeText";
+import SearchForm from "lib/components/home/SearchForm";
 
 const Home = () => {
   return (
     <Box
-      display={{ md: "flex" }}
+      display="flex"
+      justifyContent="center"
       alignItems="center"
-      minHeight="70vh"
+      minHeight="80vh"
       gap={8}
       mb={8}
       w="full"
     >
-      <SomeImage />
-
-      <Box>
-        <SomeText />
-        <CTASection />
-      </Box>
+      <Stack h="full" spacing="4">
+        <Text textAlign="center" fontWeight="bold" fontSize="28pt">
+          ReSearch Engine
+        </Text>
+        <SearchForm />
+      </Stack>
     </Box>
   );
 };

@@ -1,18 +1,21 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
-import Link from "next/link";
+import { Stack, Flex } from "@chakra-ui/react";
 
+import BurgerSidebar from "./BurgerSidebar";
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
     <Flex as="header" width="full" align="center">
-      <Heading as="h1" size="md">
-        <Link href="/">nextarter-chakra</Link>
-      </Heading>
-
-      <Box marginLeft="auto">
+      <Stack
+        spacing="8"
+        alignItems="center"
+        justifyContent="center"
+        direction="row"
+        marginLeft="auto"
+      >
         <ThemeToggle />
-      </Box>
+        <BurgerSidebar />
+      </Stack>
     </Flex>
   );
 };

@@ -1,25 +1,20 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
-  title: "nextarter-chakra",
-  titleTemplate: "%s | nextarter-chakra",
-  defaultTitle: "nextarter-chakra",
-  description: "Next.js + chakra-ui + TypeScript template",
-  canonical: "https://nextarter-chakra.sznm.dev",
+  title: "ReSearch Engine",
+  titleTemplate: "%s | ReSearch Engine",
+  defaultTitle: "ReSearch Engine",
+  description: "An eduction search engine",
+  canonical: "https://research.reylabs.xyz",
   openGraph: {
-    url: "https://nextarter-chakra.sznm.dev",
-    title: "nextarter-chakra",
-    description: "Next.js + chakra-ui + TypeScript template",
+    url: "https://research.reylabs.xyz",
+    title: "ReSearch Engine",
+    description: "An eduction serach engine",
     images: [
       {
-        url: "https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
-        alt: "nextarter-chakra.sznm.dev og-image",
+        url: "https://cdn.statically.io/og/theme=dark/ReSearch%20Engine.jpg",
       },
     ],
-    site_name: "nextarter-chakra",
-  },
-  twitter: {
-    handle: "@sozonome",
-    cardType: "summary_large_image",
+    site_name: "ReSearch Engine",
   },
 };
 
