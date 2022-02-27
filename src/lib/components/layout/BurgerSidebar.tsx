@@ -10,6 +10,7 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
+import { BsGoogle } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 
 export default function BurgerSidebar() {
@@ -35,7 +36,13 @@ export default function BurgerSidebar() {
               <Button py="12" variant="ghost" borderRadius="0" w="full">
                 Bookmarks
               </Button>
-              <Button py="12" variant="ghost" borderRadius="0" w="full">
+              <Button
+                leftIcon={<BsGoogle />}
+                py="12"
+                variant="ghost"
+                borderRadius="0"
+                w="full"
+              >
                 Connect to google
               </Button>
             </Stack>

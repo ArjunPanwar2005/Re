@@ -1,8 +1,10 @@
-import { Box, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 
 import SearchForm from "lib/components/home/SearchForm";
 
 const Home = () => {
+  const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
+
   return (
     <Box
       display="flex"
@@ -14,7 +16,11 @@ const Home = () => {
       w="full"
     >
       <Stack h="full" spacing="4">
-        <Text textAlign="center" fontWeight="bold" fontSize="28pt">
+        <Text
+          textAlign="center"
+          fontWeight="bold"
+          fontSize={isLargerThan1280 ? "28pt" : "24pt"}
+        >
           ReSearch Engine
         </Text>
         <SearchForm />
