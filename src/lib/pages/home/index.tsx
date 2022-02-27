@@ -16,13 +16,19 @@ const Home = () => {
       w="full"
     >
       <Stack h="full" spacing="4">
-        <Text
-          textAlign="center"
-          fontWeight="bold"
-          fontSize={isLargerThan1280 ? "28pt" : "24pt"}
-        >
-          ReSearch Engine
-        </Text>
+        <Box>
+          <Text
+            textAlign="center"
+            fontWeight="bold"
+            fontSize={isLargerThan1280 ? "28pt" : "24pt"}
+          >
+            ReSearch Engine
+          </Text>
+          <Text textAlign="center" fontStyle="italic" fontSize="sm">
+            Your all in one destination for learning
+          </Text>
+        </Box>
+
         <SearchForm />
       </Stack>
     </Box>
