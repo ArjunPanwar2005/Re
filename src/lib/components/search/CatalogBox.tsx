@@ -1,10 +1,4 @@
-import {
-  Box,
-  Image,
-  Text,
-  useMediaQuery,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Box, Text, useMediaQuery, useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import retriveOG from "lib/utils/retriveImageOG";
@@ -43,15 +37,21 @@ function CatalogBox({ item }: IProps) {
       borderRadius="15"
       borderColor={colorMode !== "light" ? "gray.600" : "gray.300"}
       borderWidth="1px"
+      padding="5"
     >
       <Box
         w="full"
-        h={isLargerThan1280 ? "300" : "100"}
+        h="250"
         display="flex"
         alignItems="center"
         justifyContent="center"
+        backgroundImage={image || "/noimage.png"}
+        backgroundRepeat="no-repeat"
+        backgroundPosition={isLargerThan1280 ? "center" : "center center"}
+        borderRadius="15"
+        marginBottom="5"
       >
-        <Image src={image || "/noimage.png"} />
+        {/* <Image src={image || "/noimage.png"} /> */}
       </Box>
       <Text fontWeight="bold">{item.title}</Text>
       <Text>{item.snippet}</Text>
