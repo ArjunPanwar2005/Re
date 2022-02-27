@@ -13,8 +13,11 @@ import {
 import { BsGoogle } from "react-icons/bs";
 import { FiMenu } from "react-icons/fi";
 
+import { isAuth } from "lib/utils/checkLogin";
+
 export default function BurgerSidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const isAuthorize = isAuth();
 
   const onClickGoogle = () => {
     window.location.assign(
@@ -40,10 +43,19 @@ export default function BurgerSidebar() {
           </DrawerHeader>
           <DrawerBody my="4">
             <Stack spacing="4" direction="column">
-              <Button py="12" variant="ghost" borderRadius="0" w="full">
+              <Button
+                display={isAuthorize ? "flex" : "none"}
+                py="12"
+                variant="ghost"
+                borderRadius="0"
+                w="full"
+                as="a"
+                href="/bookmarks"
+              >
                 Bookmarks
               </Button>
               <Button
+                display={isAuthorize ? "none" : "flex"}
                 leftIcon={<BsGoogle />}
                 py="12"
                 variant="ghost"
@@ -52,6 +64,17 @@ export default function BurgerSidebar() {
                 onClick={onClickGoogle}
               >
                 Connect to google
+              </Button>
+              <Button
+                display={isAuthorize ? "flex" : "none"}
+                py="12"
+                variant="ghost"
+                borderRadius="0"
+                w="full"
+                as="a"
+                href="/logout"
+              >
+                Logout
               </Button>
             </Stack>
           </DrawerBody>
