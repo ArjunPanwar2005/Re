@@ -1,6 +1,14 @@
-import { Box, Text, useMediaQuery, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  useMediaQuery,
+  useColorMode,
+  Image,
+  Button,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
+import { createBookmark } from "lib/utils/bookmarks";
 import retriveOG from "lib/utils/retriveImageOG";
 
 interface IItems {
@@ -25,12 +33,22 @@ function CatalogBox({ item }: IProps) {
 
   const [isLargerThan1280] = useMediaQuery("(min-width: 1280px)");
   const { colorMode } = useColorMode();
-
+  const addToBookmark = async (
+    bookmarkname: string,
+    bookmarkdescription: string,
+    bookmarkurl: string
+  ) => {
+    const bookmarkData = {
+      bookmarkname,
+      bookmarkurl,
+      bookmarkdescription,
+    };
+    const token = window.localStorage.getItem("access_token") as string;
+    createBookmark(bookmarkData, token);
+  };
   return (
     <Box
       p="4"
-      as="a"
-      href={item.link}
       minH="10vh"
       maxW="400"
       boxShadow="2xl"
@@ -50,11 +68,22 @@ function CatalogBox({ item }: IProps) {
         backgroundPosition={isLargerThan1280 ? "center" : "center center"}
         borderRadius="15"
         marginBottom="5"
+        as="a"
+        href={item.link}
+      />
+      <Text fontWeight="bold" height="4rem">
+        {item.title}
+      </Text>
+      <Text height={120}>{item.snippet}</Text>
+
+      <Button
+        padding="5"
+        onClick={() => {
+          addToBookmark(item.title, item.snippet, item.link);
+        }}
       >
-        {/* <Image src={image || "/noimage.png"} /> */}
-      </Box>
-      <Text fontWeight="bold">{item.title}</Text>
-      <Text>{item.snippet}</Text>
+        <Image src="/star.png" height="8" marginBottom="0" right="0" />
+      </Button>
     </Box>
   );
 }
