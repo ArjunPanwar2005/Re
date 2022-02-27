@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import type { ChangeEvent } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 
 function SearchForm() {
@@ -21,9 +21,16 @@ function SearchForm() {
   };
 
   const onClick = () => {
+    if (query.split("").length === 0) return;
     router.push(`/search?q=${query}`);
   };
-
+  useEffect(() => {
+    document.onkeydown = (e) => {
+      if (e.key === "Enter") {
+        onClick();
+      }
+    };
+  });
   return (
     <Stack
       spacing="8"
@@ -45,7 +52,9 @@ function SearchForm() {
           onChange={onChange}
         />
       </InputGroup>
-      <Button onClick={onClick}>Search</Button>
+      <Button onClick={onClick} type="submit">
+        Search
+      </Button>
     </Stack>
   );
 }
