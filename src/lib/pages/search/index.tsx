@@ -24,12 +24,10 @@ function Search({ querysearch, data }: IProps) {
   return (
     <Box minHeight="80vh" gap={8} mb={8} w="full">
       <Button
-        marginBottom="5"
-        marginRight="5"
         position="absolute"
-        right="0"
-        fontSize="1.5rem"
-        padding="8"
+        right="10"
+        fontSize="1rem"
+        padding="5"
         onClick={returnButton}
       >
         Return
